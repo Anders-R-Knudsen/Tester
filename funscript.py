@@ -20,6 +20,7 @@ def get_random_quote():
     except (requests.RequestException, ValueError):  
         # If the API fails, return a random fallback quote
         quote = random.choice(fallback_quotes)
+        print("Failed to fetch a quote. Here’s a fallback quote instead:")
         return f'"{quote["content"]}" - {quote["author"]}'
 
 if __name__ == "__main__":
